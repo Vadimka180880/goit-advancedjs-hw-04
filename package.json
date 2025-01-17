@@ -1,0 +1,38 @@
+{
+  "name": "goit-advancedjs-hw-03",
+  "version": "1.0.0",
+  "description": "Проєкт пошуку зображень із використанням Pixabay API.",
+  "main": "eslint.config.js",
+  "scripts": {
+  "dev": "vite",
+  "build": "vite build --base=/goit-advancedjs-hw-04/",
+  "preview": "vite preview",
+  "deploy": "gh-pages -d dist",
+  "lint": "eslint ./src/**/*.js"
+},
+
+  "dependencies": {
+    "izitoast": "^1.4.0",
+    "simplelightbox": "^2.14.3"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^8.20.0",
+    "@typescript-eslint/parser": "^8.20.0",
+    "eslint": "^9.18.0",
+    "gh-pages": "^6.3.0",
+    "rollup-plugin-node-polyfills": "^0.2.1",
+    "vite": "^6.0.7"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vadimka180880/goit-advancedjs-hw-03.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Vadimka180880/goit-advancedjs-hw-03/issues"
+  },
+  "homepage": "https://Vadimka180880.github.io/goit-advancedjs-hw-03",
+  "type": "module"
+}
