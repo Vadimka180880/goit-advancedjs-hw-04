@@ -1,7 +1,7 @@
 export function createGalleryMarkup(images) {
-  return images.map(({ largeImageURL, webformatURL, tags, likes, views, comments, downloads }) => `
-    <a href="${largeImageURL}" class="gallery-item" title="${tags}">
-      <div class="photo-card">
+  return images.map(({ webformatURL, largeImageURL, tags, likes, views, comments, downloads }) => {
+    return `
+      <a href="${largeImageURL}" class="photo-card">
         <img src="${webformatURL}" alt="${tags}" loading="lazy" />
         <div class="card-info">
           <p><b>Likes:</b> ${likes}</p>
@@ -9,14 +9,10 @@ export function createGalleryMarkup(images) {
           <p><b>Comments:</b> ${comments}</p>
           <p><b>Downloads:</b> ${downloads}</p>
         </div>
-      </div>
-    </a>
-  `).join('');
+      </a>`;
+  }).join('');
 }
 
-
-
-
-export function renderGallery(gallery, markup) {
-  gallery.innerHTML = markup;
+export function renderGallery(container, markup) {
+  container.insertAdjacentHTML('beforeend', markup);
 }
