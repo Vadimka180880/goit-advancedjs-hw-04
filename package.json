@@ -1,17 +1,17 @@
 {
-  "name": "goit-advancedjs-hw-03",
+  "name": "goit-advancedjs-hw-04",
   "version": "1.0.0",
   "description": "Проєкт пошуку зображень із використанням Pixabay API.",
-  "main": "eslint.config.js",
+  "main": "index.html",
   "scripts": {
-  "dev": "vite",
-  "build": "vite build --base=/goit-advancedjs-hw-04/",
-  "preview": "vite preview",
-  "deploy": "gh-pages -d dist",
-  "lint": "eslint ./src/**/*.js"
-},
-
+    "dev": "vite",
+    "build": "vite build --base=/goit-advancedjs-hw-04/",
+    "preview": "vite preview",
+    "deploy": "gh-pages -d dist",
+    "lint": "eslint ./src/**/*.js"
+  },
   "dependencies": {
+    "axios": "^1.7.9",
     "izitoast": "^1.4.0",
     "simplelightbox": "^2.14.3"
   },
@@ -25,14 +25,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Vadimka180880/goit-advancedjs-hw-03.git"
+    "url": "git+https://github.com/Vadimka180880/goit-advancedjs-hw-04.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Vadimka180880/goit-advancedjs-hw-03/issues"
+    "url": "https://github.com/Vadimka180880/goit-advancedjs-hw-04/issues"
   },
-  "homepage": "https://Vadimka180880.github.io/goit-advancedjs-hw-03",
+  "homepage": "https://Vadimka180880.github.io/goit-advancedjs-hw-04",
   "type": "module"
 }
