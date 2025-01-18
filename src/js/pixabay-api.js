@@ -21,4 +21,3 @@ export async function fetchImages(query, page, perPage) {
     throw new Error('Error fetching images');
   }
 }
-

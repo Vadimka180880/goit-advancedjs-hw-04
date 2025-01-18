@@ -1,4 +1,5 @@
-import { fetchImages } from './pixabay-api.js';
+import { fetchImages } from './js/pixabay-api.js';
+import { createGalleryMarkup, renderGallery } from './js/render-functions.js';
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 import iziToast from 'izitoast';
@@ -27,23 +28,6 @@ function hideLoadMoreButton() {
   loadMoreBtn.classList.add('hidden');
 }
 
-function renderGallery(images) {
-  const markup = images.map(({ webformatURL, largeImageURL, tags, likes, views, comments, downloads }) => `
-    <a href="${largeImageURL}" class="photo-card">
-      <img src="${webformatURL}" alt="${tags}" loading="lazy" />
-      <div class="card-info">
-        <p><b>Likes:</b> ${likes}</p>
-        <p><b>Views:</b> ${views}</p>
-        <p><b>Comments:</b> ${comments}</p>
-        <p><b>Downloads:</b> ${downloads}</p>
-      </div>
-    </a>
-  `).join('');
-
-  gallery.insertAdjacentHTML('beforeend', markup);
-  lightbox.refresh();
-}
-
 async function searchImages() {
   try {
     loader.classList.remove('hidden');
@@ -59,7 +43,9 @@ async function searchImages() {
       return;
     }
 
-    renderGallery(data.hits);
+    const markup = createGalleryMarkup(data.hits);
+    renderGallery(gallery, markup);
+    lightbox.refresh();
     totalHits = data.totalHits;
 
     if (currentPage * perPage < totalHits) {
